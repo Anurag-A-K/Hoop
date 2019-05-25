@@ -24,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Iyj-Tp-Ugw">
                                 <rect key="frame" x="100" y="797" width="214" height="40"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAX-wl-NZo">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAX-wl-NZo" customClass="CustomButtons" customModule="Hoop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="9hr-K5-yJo"/>
@@ -37,7 +37,7 @@
                                             <action selector="startHorizontalAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="NSx-hZ-13n"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNR-xI-cj2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNR-xI-cj2" customClass="CustomButtons" customModule="Hoop" customModuleProvider="target">
                                         <rect key="frame" x="87" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="rzp-La-Wjt"/>
@@ -48,7 +48,7 @@
                                             <action selector="stopAllActions:" destination="BV1-FR-VrT" eventType="touchUpInside" id="uJV-i9-4Q2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00G-ks-2W8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00G-ks-2W8" customClass="CustomButtons" customModule="Hoop" customModuleProvider="target">
                                         <rect key="frame" x="139" y="0.0" width="75" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="eZe-bJ-R6n"/>
@@ -63,6 +63,17 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZk-Ci-f5H" customClass="CustomButtons" customModule="Hoop" customModuleProvider="target">
+                                <rect key="frame" x="182" y="425.5" width="50" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="JKV-9Q-YCD"/>
+                                    <constraint firstAttribute="height" constant="45" id="l41-Gp-dcN"/>
+                                </constraints>
+                                <state key="normal" title="Add Hoop" image="kisspng-computer-icons-button-symbol-add-button-icon-5b561ae19938c0.4192713415323696336276"/>
+                                <connections>
+                                    <action selector="addHoop:" destination="BV1-FR-VrT" eventType="touchUpInside" id="0L7-ig-4fh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -70,12 +81,15 @@
                             <constraint firstItem="bQO-FR-TBi" firstAttribute="top" secondItem="qqD-0L-J9Q" secondAttribute="top" id="3Pe-4k-Ms8"/>
                             <constraint firstItem="bQO-FR-TBi" firstAttribute="trailing" secondItem="Rph-Lv-NCR" secondAttribute="trailing" id="Nb8-3v-IDr"/>
                             <constraint firstAttribute="bottom" secondItem="bQO-FR-TBi" secondAttribute="bottom" id="OR2-Oy-YCL"/>
+                            <constraint firstItem="gZk-Ci-f5H" firstAttribute="centerX" secondItem="qqD-0L-J9Q" secondAttribute="centerX" id="bNT-kl-ji2"/>
+                            <constraint firstItem="gZk-Ci-f5H" firstAttribute="centerY" secondItem="qqD-0L-J9Q" secondAttribute="centerY" id="gls-tp-ChE"/>
                             <constraint firstItem="Iyj-Tp-Ugw" firstAttribute="centerX" secondItem="qqD-0L-J9Q" secondAttribute="centerX" id="rCo-NV-8nm"/>
                             <constraint firstItem="bQO-FR-TBi" firstAttribute="leading" secondItem="Rph-Lv-NCR" secondAttribute="leading" id="xLo-MG-mZW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rph-Lv-NCR"/>
                     </view>
                     <connections>
+                        <outlet property="addHoopBtn" destination="gZk-Ci-f5H" id="g89-4c-AAM"/>
                         <outlet property="sceneView" destination="bQO-FR-TBi" id="JN1-Nk-0D4"/>
                     </connections>
                 </viewController>
@@ -85,6 +99,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="kisspng-computer-icons-button-symbol-add-button-icon-5b561ae19938c0.4192713415323696336276" width="900" height="520"/>
         <image name="stop-button-32-777957" width="256" height="256"/>
     </resources>
 </document>

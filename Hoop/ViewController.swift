@@ -14,6 +14,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    @IBOutlet weak var addHoopBtn: UIButton!
     var currentNode: SCNNode!
     
     override func viewDidLoad() {
@@ -30,7 +31,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the scene to the view
         sceneView.scene = scene
-        addBackboard()
+        //addBackboard()
         registerGestureRecognizer()
     }
     func registerGestureRecognizer() {
@@ -142,6 +143,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
     
+    @IBAction func addHoop(_ sender: Any) {
+        addBackboard()
+        addHoopBtn.isHidden = true
+    }
     
     @IBAction func startRoundAction(_ sender: Any) {
         roundAction(node: currentNode)
