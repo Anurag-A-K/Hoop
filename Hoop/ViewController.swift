@@ -14,6 +14,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     
+    var currentNode: SCNNode!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,6 +78,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let physicsBody = SCNPhysicsBody(type: .static, shape: physicsShape)
         backboardNode.physicsBody = physicsBody
         sceneView.scene.rootNode.addChildNode(backboardNode)
+        //horizontalAction(node: backboardNode)
+        currentNode = backboardNode
+    }
+    
+    func horizontalAction(node: SCNNode){
+        let leftAction = SCNAction.move(by: SCNVector3(x: -1, y: 0 , z: 0), duration: 3)
+        let rightAction = SCNAction.move(by: SCNVector3(x: 1, y: 0, z: 0), duration: 3)
+        let actionSequence = SCNAction.sequence([leftAction, rightAction])
+        node.runAction(SCNAction.repeat(actionSequence, count: 4))
+        
+    }
+    
+    func roundAction(node: SCNNode){
+        let upLeft = SCNAction.move(by: SCNVector3(x: 1, y: 1, z: 0), duration: 2)
+        let downRight = SCNAction.move(by: SCNVector3(x: 1, y: -1, z: 0), duration: 2)
+        let downLeft = SCNAction.move(by: SCNVector3(x: -1, y: -1, z: 0), duration: 2)
+        let upRight = SCNAction.move(by: SCNVector3(x: -1, y: 1, z: 0), duration: 2)
+        let actionSequence = SCNAction.sequence([upLeft, downRight, downLeft, upRight])
+        node.runAction(SCNAction.repeat(actionSequence, count: 2))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -119,5 +140,18 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+    
+    
+    @IBAction func startRoundAction(_ sender: Any) {
+        roundAction(node: currentNode)
+    }
+    
+    @IBAction func stopAllActions(_ sender: Any) {
+        currentNode.removeAllActions()
+    }
+    
+    @IBAction func startHorizontalAction(_ sender: Any) {
+        horizontalAction(node: currentNode)
     }
 }

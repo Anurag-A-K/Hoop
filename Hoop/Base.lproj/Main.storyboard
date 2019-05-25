@@ -21,12 +21,56 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQO-FR-TBi">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </arscnView>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Iyj-Tp-Ugw">
+                                <rect key="frame" x="100" y="797" width="214" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAX-wl-NZo">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="9hr-K5-yJo"/>
+                                            <constraint firstAttribute="width" constant="75" id="hz8-TR-OJb"/>
+                                        </constraints>
+                                        <state key="normal" title="&lt;--&gt;">
+                                            <color key="titleColor" red="0.22694705310880825" green="0.22694705310880825" blue="0.22694705310880825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startHorizontalAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="NSx-hZ-13n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNR-xI-cj2">
+                                        <rect key="frame" x="87" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="rzp-La-Wjt"/>
+                                            <constraint firstAttribute="width" constant="40" id="tX0-g0-r8D"/>
+                                        </constraints>
+                                        <state key="normal" title="Stop" image="stop-button-32-777957"/>
+                                        <connections>
+                                            <action selector="stopAllActions:" destination="BV1-FR-VrT" eventType="touchUpInside" id="uJV-i9-4Q2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00G-ks-2W8">
+                                        <rect key="frame" x="139" y="0.0" width="75" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="eZe-bJ-R6n"/>
+                                            <constraint firstAttribute="width" constant="75" id="zzT-BV-srI"/>
+                                        </constraints>
+                                        <state key="normal" title="&lt;~~&gt;">
+                                            <color key="titleColor" red="0.22694705309999999" green="0.22694705309999999" blue="0.22694705309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startRoundAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="FHO-pB-cZ1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Rph-Lv-NCR" firstAttribute="bottom" secondItem="Iyj-Tp-Ugw" secondAttribute="bottom" constant="25" id="2w9-qp-0oH"/>
                             <constraint firstItem="bQO-FR-TBi" firstAttribute="top" secondItem="qqD-0L-J9Q" secondAttribute="top" id="3Pe-4k-Ms8"/>
                             <constraint firstItem="bQO-FR-TBi" firstAttribute="trailing" secondItem="Rph-Lv-NCR" secondAttribute="trailing" id="Nb8-3v-IDr"/>
                             <constraint firstAttribute="bottom" secondItem="bQO-FR-TBi" secondAttribute="bottom" id="OR2-Oy-YCL"/>
+                            <constraint firstItem="Iyj-Tp-Ugw" firstAttribute="centerX" secondItem="qqD-0L-J9Q" secondAttribute="centerX" id="rCo-NV-8nm"/>
                             <constraint firstItem="bQO-FR-TBi" firstAttribute="leading" secondItem="Rph-Lv-NCR" secondAttribute="leading" id="xLo-MG-mZW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Rph-Lv-NCR"/>
@@ -40,4 +84,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="stop-button-32-777957" width="256" height="256"/>
+    </resources>
 </document>
